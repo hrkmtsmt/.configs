@@ -1,10 +1,51 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+format = """
+$username \
+$directory \
+($git_branch$git_status )\
+($golang )\
+($haskell )\
+($nodejs )\
+($rust )\
+($scala )\
+($docker_context )\
+$time \
+[\\$](fg:#ef2bc1) \
+"""
 
-add_newline = true
+[username]
+show_always = true
+format = '[$user](fg:#00b9e5)'
+disabled = false
 
-[character]
-success_symbol = '🥝'
-error_symbol = '🌶️'
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+truncation_symbol = "/"
+format = "[$path](fg:#38d430)[$read_only](fg:#38d430)"
 
-[package]
-disabled = true
+[git_branch]
+symbol = "branch:"
+format = '[$symbol($branch)](fg:#e3e82b)'
+
+[git_status]
+format = '([:$all_status$ahead_behind](fg:#e3e82b))'
+
+[golang]
+format = '[$symbol($version)](fg:#ffab4d)'
+
+[haskell]
+format = '[$symbol($version)](fg:#ffab4d)'
+
+[nodejs]
+format = '[$symbol($version)](fg:#ffab4d)'
+
+[rust]
+format = '[$symbol($version)](fg:#ffab4d)'
+
+[scala]
+format = '[$symbol($version)](fg:#ffab4d)'
+
+[time]
+disabled = false
+time_format = "%R"
+format = '[$time](fg:#ef2bc1)'
