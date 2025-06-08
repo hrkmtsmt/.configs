@@ -9,7 +9,7 @@ $directory \
 ($scala )\
 ($docker_context )\
 $time \
-[\\$](fg:#ef2bc1) \
+[\n\\$](fg:#00b9e5) \
 """
 
 [username]
